@@ -7,12 +7,12 @@
 		"build": "next build",
 		"start": "next start",
 		"type:check": "tsc --project tsconfig.json --pretty --noEmit",
-		"lint:fix": "eslint --ext js,jsx,ts,tsx --fix",
-		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
+		"lint": "eslint .",
 		"style:check": "prettier --check src/**",
 		"style:fix": "prettier --write src/**",
-		"commit:lint": "lint-staged"
+		"commit:lint": "lint-staged",
+		"postinstall": "husky install"
 	},
 	"dependencies": {
 		"next": "10.2.3",
@@ -29,6 +29,7 @@
 		"eslint-plugin-prettier": "^3.4.0",
 		"eslint-plugin-react": "^7.24.0",
 		"eslint-plugin-react-hooks": "^4.2.0",
+		"husky": "^6.0.0",
 		"lint-staged": "^11.0.0",
 		"prettier": "^2.3.1",
 		"typescript": "4.3.2"
