@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Board from '../components/Board';
+import GlobalStyle from '../components/GlobalStyle';
 
 import Header from '../components/Header';
 export default function Home() {
@@ -13,7 +15,9 @@ export default function Home() {
 					rel="stylesheet"
 				></link>
 			</Head>
+			<GlobalStyle />
 			<Header />
+			<Board />
 		</>
 	);
 }
