@@ -3,6 +3,9 @@ import { createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
   :root {
     --main-background: #ecf1f8;
+    --secondary-background: #e9afa3;
+    --main-font-color:#333;
+    --secondary-font-color:#FFF;
   }
 
   * {
@@ -19,7 +22,7 @@ export default createGlobalStyle`
   body {
     font: 14px 'Roboto', sans-serif;
     background: var(--main-background);
-    color: #333;
+    color: var(--main-font-color);
     -webkit-font-smoothing: antialiased !important;
   }
 
