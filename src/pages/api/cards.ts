@@ -1,19 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-
-interface ICard {
-	id: number;
-	content: string;
-	labels?: string[];
-	user?: string;
-}
-
-interface ICardList {
-	title: string;
-	creatable: boolean;
-	done?: boolean;
-	cards: ICard[];
-}
+import { ICardList } from '../../interfaces/Card';
 
 export default (req: NextApiRequest, res: NextApiResponse<ICardList[]>) => {
 	res.status(200).json([
