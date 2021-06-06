@@ -13,6 +13,9 @@ export default function CardList() {
 			</header>
 			<ul>
 				<Card />
+				<Card />
+				<Card />
+				<Card />
 			</ul>
 		</Container>
 	);
