@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
+export interface ICardListContainerProps {
+	done?: boolean;
+}
+
+export const Container = styled.section<ICardListContainerProps>`
 	padding: 0 15px;
 	height: 100%;
+	opacity: ${(props) => (props.done ? 0.6 : 1)};
 	flex: 0 0 320px;
 	/* flex-grow: 0; -> Define o quanto, proporcionalmente, o componente pode esticar (aumentar a largura quando seu conteudo for maior do que o que ele comporta)
 	flex-shrink: 0; -> Define o quanto, proporcionalmente, o elemento pode reduzir/encolher.

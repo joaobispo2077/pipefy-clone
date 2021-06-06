@@ -1,22 +1,30 @@
 import { MdAdd } from 'react-icons/md';
+import { ICardList } from '../../interfaces/Card';
 import Card from '../Card';
 import { Container } from './styles';
 
-export default function CardList() {
+export interface ICardListProps {
+	cardList: ICardList;
+}
+
+const CardList = ({ cardList }: ICardListProps) => {
 	return (
-		<Container>
+		<Container done={cardList.done ? cardList.done : false}>
 			<header>
-				<h2>Tarefas</h2>
-				<button type="button">
-					<MdAdd size={24} color="#FFF" />
-				</button>
+				<h2>{cardList.title}</h2>
+				{cardList.creatable && (
+					<button type="button">
+						<MdAdd size={24} color="#FFF" />
+					</button>
+				)}
 			</header>
 			<ul>
-				<Card />
-				<Card />
-				<Card />
-				<Card />
+				{cardList.cards.map((card) => (
+					<Card key={card.id} card={card} />
+				))}
 			</ul>
 		</Container>
 	);
-}
+};
+
+export default CardList;

@@ -1,17 +1,20 @@
 import React from 'react';
+import { ICard } from '../../interfaces/Card';
 import { Container, Label } from './styles';
 
-export default function Card() {
+interface ICardItemProps {
+	card: ICard;
+}
+
+export default function Card({ card }: ICardItemProps) {
 	return (
 		<Container>
 			<header>
-				<Label color="#19afdd" />
+				{card.labels &&
+					card.labels.map((label) => <Label key={label} color={label} />)}
 			</header>
-			<p>lorem ipsum dolor sit amet</p>
-			<img
-				src="https://avatars.githubusercontent.com/u/43768058?s=400&u=88f13aa1305b0a1d36270179b7f2fbf3725b792b&v=4"
-				alt="User"
-			/>
+			<p>{card.content}</p>
+			{card.user && <img src={card.user} alt="User" />}
 		</Container>
 	);
 }
