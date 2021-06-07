@@ -8,6 +8,7 @@ export interface ICard {
 export interface ICardList {
 	title: string;
 	creatable: boolean;
+	id: number;
 	done?: boolean;
 	cards: ICard[];
 }
