@@ -7,6 +7,7 @@ export default (req: NextApiRequest, res: NextApiResponse<ICardList[]>) => {
 		{
 			title: 'Tarefas',
 			creatable: true,
+			id: 1,
 			cards: [
 				{
 					id: 1,
@@ -43,6 +44,7 @@ export default (req: NextApiRequest, res: NextApiResponse<ICardList[]>) => {
 		{
 			title: 'Fazendo',
 			creatable: false,
+			id: 2,
 			cards: [
 				{
 					id: 6,
@@ -56,6 +58,7 @@ export default (req: NextApiRequest, res: NextApiResponse<ICardList[]>) => {
 		{
 			title: 'Pausado',
 			creatable: false,
+			id: 3,
 			cards: [
 				{
 					id: 7,
@@ -80,6 +83,7 @@ export default (req: NextApiRequest, res: NextApiResponse<ICardList[]>) => {
 			title: 'Concluído',
 			creatable: false,
 			done: true,
+			id: 4,
 			cards: [
 				{
 					id: 10,
