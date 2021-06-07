@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
+import { DragDropContext } from 'react-beautiful-dnd';
+
 import { ICardList } from '../../interfaces/Card';
 import CardList from '../CardList';
 import { Container } from './styles';
@@ -16,12 +18,20 @@ export default function Board() {
 		return cardsLists;
 	};
 
+	const onDragEnd = useCallback((result) => {
+		const { source, destination, draggableId } = result;
+
+		console.log(source, destination, draggableId);
+	}, []);
+
 	return (
-		<Container>
-			{cardlists &&
-				cardlists.map((cardList) => (
-					<CardList key={cardList.title} cardList={cardList} />
-				))}
-		</Container>
+		<DragDropContext onDragEnd={onDragEnd}>
+			<Container>
+				{cardlists &&
+					cardlists.map((cardList, index) => (
+						<CardList index={index} key={cardList.title} cardList={cardList} />
+					))}
+			</Container>
+		</DragDropContext>
 	);
 }
