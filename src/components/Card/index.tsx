@@ -1,33 +1,47 @@
 import React from 'react';
-import { ICard } from '../../interfaces/Card';
-import { Container, Label } from './styles';
+import { Draggable } from 'react-beautiful-dnd';
 
-import { useDrag } from 'react-dnd';
+import { ICard } from '../../interfaces/Card';
+import { Container, Label, CloneContainer } from './styles';
+
 interface ICardItemProps {
 	card: ICard;
+	index: number;
 }
 
-const ItemType = {
-	CARD: 'CARD',
-};
-
-export default function Card({ card }: ICardItemProps) {
-	const [{ isDragging }, drag] = useDrag(() => ({
-		type: ItemType.CARD,
-		item: { id: String(Math.random()), type: ItemType.CARD },
-		collect: (monitor) => ({
-			isDragging: monitor.isDragging(),
-		}),
-	}));
-
+export default function Card({ card, index }: ICardItemProps) {
 	return (
-		<Container ref={drag} isDragging={isDragging}>
-			<header>
-				{card.labels &&
-					card.labels.map((label) => <Label key={label} color={label} />)}
-			</header>
-			<p>{card.content}</p>
-			{card.user && <img src={card.user} alt="User" />}
-		</Container>
+		<Draggable draggableId={String(card.id)} index={index}>
+			{(provided, snapshot) => (
+				<>
+					<Container
+						ref={provided.innerRef}
+						{...provided.draggableProps}
+						{...provided.dragHandleProps}
+						isDragging={snapshot.isDragging}
+					>
+						<header>
+							{card.labels &&
+								card.labels.map((label) => <Label key={label} color={label} />)}
+						</header>
+						<p>{card.content}</p>
+						{card.user && <img src={card.user} alt="User" />}
+					</Container>
+					{snapshot.isDragging && (
+						<CloneContainer isDragging={snapshot.isDragging}>
+							{' '}
+							<header>
+								{card.labels &&
+									card.labels.map((label) => (
+										<Label key={label} color={label} />
+									))}
+							</header>
+							<p>{card.content}</p>
+							{card.user && <img src={card.user} alt="User" />}
+						</CloneContainer>
+					)}
+				</>
+			)}
+		</Draggable>
 	);
 }

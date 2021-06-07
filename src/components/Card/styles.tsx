@@ -31,7 +31,9 @@ export const Container = styled.section<ICardContainerProps>`
 		border-radius: 2px;
 		margin-top: 5px;
 	}
+`;
 
+export const CloneContainer = styled(Container)`
 	${(props) =>
 		props.isDragging &&
 		css`
