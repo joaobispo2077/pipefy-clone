@@ -1,10 +1,13 @@
 import { MdAdd } from 'react-icons/md';
+import { Droppable } from 'react-beautiful-dnd';
+
 import { ICardList } from '../../interfaces/Card';
 import Card from '../Card';
 import { Container } from './styles';
 
 export interface ICardListProps {
 	cardList: ICardList;
+	index: number;
 }
 
 const CardList = ({ cardList }: ICardListProps) => {
@@ -18,11 +21,22 @@ const CardList = ({ cardList }: ICardListProps) => {
 					</button>
 				)}
 			</header>
-			<ul>
-				{cardList.cards.map((card) => (
-					<Card key={card.id} card={card} />
-				))}
-			</ul>
+			<Droppable droppableId={String(cardList.title)}>
+				{(provided) => (
+					// isDraggingOver={snapshot.isDraggingOver}
+					<ul ref={provided.innerRef}>
+						{cardList.cards.map((card, index) => (
+							<Card
+								index={index}
+								{...provided.droppableProps}
+								key={card.id}
+								card={card}
+							/>
+						))}
+						{provided.placeholder}
+					</ul>
+				)}
+			</Droppable>
 		</Container>
 	);
 };
