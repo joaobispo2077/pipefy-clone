@@ -4,7 +4,6 @@ import {
 	DraggableLocation,
 	DropResult,
 } from 'react-beautiful-dnd';
-import produce from 'immer';
 import { ICardList } from '../../interfaces/Card';
 import CardList from '../CardList';
 import { Container } from './styles';
@@ -30,22 +29,26 @@ export default function Board() {
 	const [cardlists, setCardLists] = useState<ICardList[]>();
 
 	const moveCard = (from: IDropItem, to: IDropItem) => {
-		setCardLists(
-			produce(cardlists, (draft) => {
-				// if (!draft) return;
-				console.log('draft', draft);
+		console.log('v', cardlists);
 
-				if (!draft) return cardlists;
-				const dragged = draft[from.columnIndex].cards[from.cardIndex];
+		if (!cardlists) return;
 
-				draft[from.columnIndex].cards.splice(from.cardIndex, 1);
+		const newCardList = Array.from(cardlists);
 
-				draft[to.columnIndex].cards.splice(to.cardIndex, 0, dragged);
-			}),
-		);
+		const dragged = newCardList[from.columnIndex].cards[from.cardIndex];
+
+		newCardList[from.columnIndex].cards.splice(from.cardIndex, 1);
+
+		newCardList[to.columnIndex].cards.splice(to.cardIndex, 0, dragged);
+
+		console.log(newCardList);
+
+		setCardLists(newCardList);
 	};
+
 	useEffect(() => {
-		getCardLists().then((cardsLists) => setCardLists(cardsLists));
+		if (!cardlists)
+			getCardLists().then((cardsLists) => setCardLists(cardsLists));
 	}, []);
 
 	const getCardLists = async (): Promise<ICardList[]> => {
