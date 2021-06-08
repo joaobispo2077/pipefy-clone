@@ -64,16 +64,6 @@ export default function Board() {
 
 		if (isDropInActualPosition(source, destination)) return;
 
-		// const draggedColumn = (cardlists as ICardList[])[
-		// 	Number(source.droppableId)
-		// ];
-
-		// const droppedColumn = (cardlists as ICardList[])[
-		// 	Number(destination.droppableId)
-		// ];
-
-		// console.log(draggedColumn === droppedColumn);
-
 		console.log('draggableId!', draggableId);
 
 		const draggedItem = {
