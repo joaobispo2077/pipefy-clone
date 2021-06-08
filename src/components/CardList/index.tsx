@@ -10,7 +10,7 @@ export interface ICardListProps {
 	index: number;
 }
 
-const CardList = ({ cardList }: ICardListProps) => {
+const CardList = ({ cardList, index }: ICardListProps) => {
 	return (
 		<Container done={cardList.done ? cardList.done : false}>
 			<header>
@@ -21,7 +21,7 @@ const CardList = ({ cardList }: ICardListProps) => {
 					</button>
 				)}
 			</header>
-			<Droppable droppableId={String(cardList.title)}>
+			<Droppable droppableId={String(index)}>
 				{(provided) => (
 					// isDraggingOver={snapshot.isDraggingOver}
 					<ul ref={provided.innerRef}>

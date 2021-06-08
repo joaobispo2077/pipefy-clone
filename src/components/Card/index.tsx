@@ -3,6 +3,7 @@ import { Draggable } from 'react-beautiful-dnd';
 
 import { ICard } from '../../interfaces/Card';
 import { Container, Label, CloneContainer } from './styles';
+// import CardsContext from '../../contexts/Cards';
 
 interface ICardItemProps {
 	card: ICard;
@@ -10,6 +11,8 @@ interface ICardItemProps {
 }
 
 export default function Card({ card, index }: ICardItemProps) {
+	// const { move } = useContext(CardsContext);
+
 	return (
 		<Draggable draggableId={String(card.id)} index={index}>
 			{(provided, snapshot) => (
