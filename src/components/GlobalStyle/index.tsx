@@ -16,6 +16,12 @@ export default createGlobalStyle`
 
   html, body, #__next {
     height: 100%;
+
+    ::-webkit-scrollbar {
+		  display: none;
+	  }
+
+    scrollbar-width: none; // hidden scrollbar in firefox
   }
 
   body {
@@ -23,6 +29,7 @@ export default createGlobalStyle`
     background: var(--main-background);
     color: var(--main-font-color);
     -webkit-font-smoothing: antialiased !important;
+
   }
 
   ul {
