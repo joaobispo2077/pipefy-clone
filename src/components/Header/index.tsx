@@ -4,7 +4,7 @@ import { Container } from './styles';
 export default function Header() {
 	return (
 		<Container>
-			<h1>Pipefy</h1>
+			<h1>Pipefy Clone com acessibilidade</h1>
 		</Container>
 	);
 }

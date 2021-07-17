@@ -29,7 +29,7 @@ export default (req: NextApiRequest, res: NextApiResponse<ICardList[]>) => {
 				},
 				{
 					id: 4,
-					content: 'Preparar projetos secretos"',
+					content: 'Preparar projetos secretos para minha namorada',
 					labels: ['#a86f9c'],
 					user: 'https://avatars.githubusercontent.com/u/43768058?s=400&u=88f13aa1305b0a1d36270179b7f2fbf3725b792b&v=4',
 				},
@@ -87,7 +87,7 @@ export default (req: NextApiRequest, res: NextApiResponse<ICardList[]>) => {
 				},
 				{
 					id: 11,
-					content: 'Pull Request para a he4rt',
+					content: 'Pull Request do artigo de Next.JS para a he4rt',
 					labels: [],
 				},
 				{
