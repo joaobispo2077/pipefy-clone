@@ -36,7 +36,7 @@ export default (req: NextApiRequest, res: NextApiResponse<ICardList[]>) => {
 				{
 					id: 5,
 					content: 'Implementar testes unitários com Serverless Framework',
-					labels: ['#a86f9c'],
+					labels: ['#5BBA6F'],
 					user: 'https://avatars.githubusercontent.com/u/43768058?s=400&u=88f13aa1305b0a1d36270179b7f2fbf3725b792b&v=4',
 				},
 			],
@@ -53,6 +53,19 @@ export default (req: NextApiRequest, res: NextApiResponse<ICardList[]>) => {
 					labels: [],
 					user: 'https://avatars.githubusercontent.com/u/43768058?s=400&u=88f13aa1305b0a1d36270179b7f2fbf3725b792b&v=4',
 				},
+				{
+					id: 7,
+					content: 'Fazer um clone do Pipefy com suporte a acessibilidade',
+					labels: ['#5BBA6F'],
+					user: 'https://avatars.githubusercontent.com/u/43768058?s=400&u=88f13aa1305b0a1d36270179b7f2fbf3725b792b&v=4',
+				},
+				{
+					id: 8,
+					content:
+						'Selecionar resources de documentação de APIs no estilo Swagger',
+					labels: ['#5BBA6F'],
+					user: 'https://avatars.githubusercontent.com/u/43768058?s=400&u=88f13aa1305b0a1d36270179b7f2fbf3725b792b&v=4',
+				},
 			],
 		},
 		{
@@ -61,21 +74,28 @@ export default (req: NextApiRequest, res: NextApiResponse<ICardList[]>) => {
 			id: 3,
 			cards: [
 				{
-					id: 7,
+					id: 9,
 					content: 'Organizar guarda roupas',
 					labels: ['#19afdd'],
 					user: 'https://avatars.githubusercontent.com/u/43768058?s=400&u=88f13aa1305b0a1d36270179b7f2fbf3725b792b&v=4',
 				},
 				{
-					id: 8,
+					id: 10,
 					content: 'Ler Sapiens - uma breve história da humanidade',
 					labels: ['#a86f9c'],
 					user: 'https://avatars.githubusercontent.com/u/43768058?s=400&u=88f13aa1305b0a1d36270179b7f2fbf3725b792b&v=4',
 				},
 				{
-					id: 9,
+					id: 11,
 					content: 'Pull Request para a he4rt',
 					labels: [],
+				},
+				{
+					id: 12,
+					content:
+						'Selecionar resources de documentação de componentes no estilo Storybook',
+					labels: ['#5BBA6F'],
+					user: 'https://avatars.githubusercontent.com/u/43768058?s=400&u=88f13aa1305b0a1d36270179b7f2fbf3725b792b&v=4',
 				},
 			],
 		},
@@ -86,17 +106,17 @@ export default (req: NextApiRequest, res: NextApiResponse<ICardList[]>) => {
 			id: 4,
 			cards: [
 				{
-					id: 10,
+					id: 13,
 					content: 'Estudar Clean Architecture',
 					labels: [],
 				},
 				{
-					id: 12,
+					id: 14,
 					content: 'Treinar testes de integração',
 					labels: ['#a86f9c'],
 				},
 				{
-					id: 13,
+					id: 15,
 					content: 'Primeira parte do projeto secreto',
 					labels: ['#19afdd'],
 				},
