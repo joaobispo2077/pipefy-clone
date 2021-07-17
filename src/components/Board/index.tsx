@@ -28,12 +28,14 @@ const isDropInActualPosition = (
 export default function Board() {
 	const [cardlists, setCardLists] = useState<ICardList[]>();
 
-	const moveCard = (from: IDropItem, to: IDropItem) => {
-		console.log('v', cardlists);
+	const moveCard = (
+		from: IDropItem,
+		to: IDropItem,
+		cards: ICardList[] | undefined,
+	): void => {
+		if (!cards) return;
 
-		if (!cardlists) return;
-
-		const newCardList = Array.from(cardlists);
+		const newCardList = Array.from(cards);
 
 		const dragged = newCardList[from.columnIndex].cards[from.cardIndex];
 
@@ -49,35 +51,40 @@ export default function Board() {
 	useEffect(() => {
 		if (!cardlists)
 			getCardLists().then((cardsLists) => setCardLists(cardsLists));
-	}, []);
+	}, [cardlists]);
 
 	const getCardLists = async (): Promise<ICardList[]> => {
 		const response = await fetch('http://localhost:3000/api/cards');
-		const cardsLists = response.json();
+		const cardsLists = await response.json();
 		return cardsLists;
 	};
 
-	const onDragEnd = useCallback((result: DropResult) => {
-		const { source, destination, draggableId } = result;
+	const onDragEnd = useCallback(
+		(result: DropResult) => {
+			const { source, destination, draggableId } = result;
 
-		if (!destination) return;
+			if (!destination) return;
 
-		if (isDropInActualPosition(source, destination)) return;
+			if (isDropInActualPosition(source, destination)) return;
 
-		console.log('draggableId!', draggableId);
+			console.log('draggableId!', draggableId);
 
-		const draggedItem = {
-			cardIndex: source.index,
-			columnIndex: Number(source.droppableId),
-		};
+			const draggedItem = {
+				cardIndex: source.index,
+				columnIndex: Number(source.droppableId),
+			};
 
-		const droppedItem = {
-			cardIndex: destination.index,
-			columnIndex: Number(destination.droppableId),
-		};
+			const droppedItem = {
+				cardIndex: destination.index,
+				columnIndex: Number(destination.droppableId),
+			};
 
-		moveCard(draggedItem, droppedItem);
-	}, []);
+			console.log('cardlists', cardlists);
+
+			moveCard(draggedItem, droppedItem, cardlists);
+		},
+		[cardlists],
+	);
 
 	return (
 		<CardsContext.Provider value={{ cardlists, moveCard }}>
