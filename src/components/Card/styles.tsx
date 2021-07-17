@@ -4,7 +4,7 @@ export interface ICardContainerProps {
 	isDragging?: boolean;
 }
 
-export const Container = styled.section<ICardContainerProps>`
+export const Container = styled.li<ICardContainerProps>`
 	position: relative;
 	background: #fff;
 	border-radius: 5px;
