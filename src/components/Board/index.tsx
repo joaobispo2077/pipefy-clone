@@ -54,7 +54,7 @@ export default function Board() {
 	}, [cardlists]);
 
 	const getCardLists = async (): Promise<ICardList[]> => {
-		const response = await fetch('http://localhost:3000/api/cards');
+		const response = await fetch('/api/cards');
 		const cardsLists = await response.json();
 		return cardsLists;
 	};
