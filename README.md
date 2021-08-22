@@ -10,7 +10,7 @@
 <p align="center">
  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=e9afa3&labelColor=1C1C1C" alt="PRs welcome!" />
 
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=e9afa3&labelColor=1C1C1C">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=not specified&color=e9afa3&labelColor=1C1C1C">
 </p>
 <p align="center">
 <!-- <a href="https://github.com/joaobispo2077" target="_blank">
@@ -28,11 +28,11 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-desafios">Desafios</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#%EF%B8%8F-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-licença">Licença</a>
 </p>
 
@@ -41,6 +41,10 @@
 <!-- <p align="center">
   <img alt="happy Previw" src=".github/happy.png" width="100%">
 </p> -->
+
+## 💻 Projeto
+
+O Pipefy Clone é um projeto de exemplo de uma aplicação como o Pipefy, que possua um drag and drop para todos!
 
 ## 🚀 Tecnologias
 
@@ -54,10 +58,6 @@ Também utilizei bibliotecas populares:
 
 - [Styled components para abstração do CSS](https://www.styled-components.com)
 - [React beautiful drag and drop para facilitação na acessibilidade](https://react-beautiful-dnd.netlify.app)
-
-## 💻 Projeto
-
-O Pipefy Clone é um projeto de exemplo de uma aplicação como o Pipefy, que possua um drag and drop para todos!
 
 ## 🔖 Layout
 
@@ -77,10 +77,6 @@ O Pipefy Clone é um projeto de exemplo de uma aplicação como o Pipefy, que po
 - Faça push para a sua branch: `git push origin minha-feature`.
 
 Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
-
-## :memo: Licença
-
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
 ---
 
